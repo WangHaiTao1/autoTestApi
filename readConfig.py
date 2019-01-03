@@ -15,3 +15,8 @@ class ReadConfig:
 
         value = self.cf.get("HTTP",name)
         return value
+
+    def get_DB(self,name):
+
+        value = self.cf.get("MYSQL",name)
+        return value
