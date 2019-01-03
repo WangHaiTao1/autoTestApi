@@ -191,9 +191,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-01-02 20:45:51</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:09.692029</p>
-<p class='attribute'><strong>Status:</strong> Pass 3</p>
+<p class='attribute'><strong>Start Time:</strong> 2019-01-03 21:32:21</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:21.712097</p>
+<p class='attribute'><strong>Status:</strong> Pass 3 | Error 4</p>
 
 <p class='description'>测试描述</p>
 </div>
@@ -249,15 +249,14 @@ function showOutput(id, name) {
         <pre>
         
 pt1.1: 正确的手机号测试开始前准备
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
-第一步：设置url/api/v1/cfuser/sendCode/13052395885
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885.0
 第二步: 设置header(token等)
 第三步：设置发送请求的参数
 第四步：发送请求
 		请求方法：POST
 success
-{'errorDescription': '', 'errorMessage': '', 'token': '', 'value': 'success ! 4518', 'success': True}
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
+{'errorDescription': '', 'errorMessage': '', 'token': '', 'value': 'success ! 4899', 'success': True}
+标题已存在
 第五步:检查结果
 
 
@@ -294,15 +293,13 @@ https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
         <pre>
         
 pt2.1: 验证60秒测试开始前准备
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
-第一步：设置url/api/v1/cfuser/sendCode/13052395885
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885.0
 第二步: 设置header(token等)
 第三步：设置发送请求的参数
 第四步：发送请求
 		请求方法：POST
 一分钟只能获取一次验证码
 {'errorDescription': '1000000', 'errorMessage': '一分钟只能获取一次验证码(57s)', 'token': '', 'value': None, 'success': False}
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
 第五步:检查结果
 
 
@@ -339,16 +336,194 @@ https://m-test.ibubuji.com/api/v1/cfuser/sendCode/13052395885
         <pre>
         
 pt3.1: 手机号为空测试开始前准备
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/
-第一步：设置url/api/v1/cfuser/sendCode/
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/sendCode/
 第二步: 设置header(token等)
 第三步：设置发送请求的参数
 第四步：发送请求
 		请求方法：POST
 1000003
 {'errorDescription': '1000003', 'errorMessage': 'Required request body is missing: com.zac.blockchain.entity.ResultBase&lt;java.lang.String&gt; com.zac.blockchain.controller.UserController.sendCode(com.zac.blockchain.param.SingleUserMobileParam)', 'token': '', 'value': None, 'success': False}
-https://m-test.ibubuji.com/api/v1/cfuser/sendCode/
 第五步:检查结果
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>paramunittest.SendCode_0</td>
+    <td>正确的手机号,正确的验证码</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td colspan='2' class='errorCase'><div class='testcase'>test_sendCode</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: 正确的手机号,正确的验证码测试开始前准备
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/login/mobile
+第二步: 设置header(token等)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\testCase\user\testLogin.py", line 71, in test_sendCode
+    configHttp.set_params(self.params)
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\common\configHTTP.py", line 39, in set_params
+    self.params = json.loads(param)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>paramunittest.SendCode_1</td>
+    <td>正确的手机号,错误的验证码</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td colspan='2' class='errorCase'><div class='testcase'>test_sendCode</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: 正确的手机号,错误的验证码测试开始前准备
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/login/mobile
+第二步: 设置header(token等)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\testCase\user\testLogin.py", line 71, in test_sendCode
+    configHttp.set_params(self.params)
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\common\configHTTP.py", line 39, in set_params
+    self.params = json.loads(param)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>paramunittest.SendCode_2</td>
+    <td>错误的手机号,正确的验证码</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td colspan='2' class='errorCase'><div class='testcase'>test_sendCode</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: 错误的手机号,正确的验证码测试开始前准备
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/login/mobile
+第二步: 设置header(token等)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\testCase\user\testLogin.py", line 71, in test_sendCode
+    configHttp.set_params(self.params)
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\common\configHTTP.py", line 39, in set_params
+    self.params = json.loads(param)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>paramunittest.SendCode_3</td>
+    <td>错误的手机号,错误的验证码</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td colspan='2' class='errorCase'><div class='testcase'>test_sendCode</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: 错误的手机号,错误的验证码测试开始前准备
+第一步：设置urlhttps://m-test.ibubuji.com/api/v1/cfuser/login/mobile
+第二步: 设置header(token等)
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\testCase\user\testLogin.py", line 71, in test_sendCode
+    configHttp.set_params(self.params)
+  File "C:\Users\Administrator\PycharmProjects\autoTestApi\common\configHTTP.py", line 39, in set_params
+    self.params = json.loads(param)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
 
 
         </pre>
@@ -360,10 +535,10 @@ https://m-test.ibubuji.com/api/v1/cfuser/sendCode/
 
 <tr id='total_row'>
     <td colspan='2'>Total</td>
-    <td>3</td>
+    <td>7</td>
     <td>3</td>
     <td>0</td>
-    <td>0</td>
+    <td>4</td>
     <td>&nbsp;</td>
 </tr>
 </table>

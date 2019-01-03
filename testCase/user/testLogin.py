@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-
 import unittest
 import paramunittest
 import readConfig
 from common import configHTTP ,public
 import time
-
-caseList = public.Get_xlsx("userCase.xlsx","testSendCode")
+import json
+caseList = public.Get_xlsx("userCase.xlsx","testLogin")
 
 readConf = readConfig.ReadConfig()
 configHttp = configHTTP.config_Http()
@@ -31,8 +30,8 @@ class SendCode(unittest.TestCase):
 
         self.caseNo = str(caseNo)
         self.case_name = str(case_name)
-        self.header = str(header)
-        self.params = str(params)
+        self.header = header
+        self.params = params
         self.address = str(address)
         self.mothod = str(mothod)
         self.realmsg = str(realmsg)
@@ -56,15 +55,20 @@ class SendCode(unittest.TestCase):
         :return:
         """
         #设置URL
-        self.url = self.address +self.params
+        self.url = self.address
         configHttp.set_url(self.url)
         print("第一步：设置url"+configHttp.url)
 
         #set headers
+        self.header = self.header
+        configHttp.set_header(self.header)
         print("第二步: 设置header(token等)")
 
         #set params
-
+        params = json.loads(self.params)
+        code=readConf.get_code("code")
+        params.update({"code":code})
+        configHttp.set_params(params)
         print("第三步：设置发送请求的参数")
         #发送post请求
         self.return_json = configHttp.post()
@@ -84,10 +88,8 @@ class SendCode(unittest.TestCase):
     def checkResult(self):
         self.info = self.return_json.json()
 
-
         if self.caseNo.split("_")[-1] == "1":
             self.assertIn(self.testmsg,self.info["value"])
-            public.write_code(str(self.info["value"]).split("! ")[-1])
 
         if self.caseNo.split("_")[-1] == "2":
             self.assertIn(self.testmsg, self.info["errorMessage"])
@@ -98,5 +100,3 @@ class SendCode(unittest.TestCase):
     def tearDown(self):
 
         time.sleep(3)
-
-

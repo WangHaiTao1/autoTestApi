@@ -8,8 +8,10 @@ import os
 import xlrd
 import readConfig
 from datetime import datetime
+import configparser
 proDir = readConfig.proDir
 # print(proDir)
+
 def Get_xlsx(xls_name,sheet_name):
 
     cacelist = []
@@ -54,3 +56,21 @@ def get_reportPath():
     reportPath = os.path.join(rePath, "report.html")
 
     return reportPath
+from common import configHTTP
+def write_code(code):
+
+    configDir = os.path.join(proDir , "config.ini")
+    config = configparser.ConfigParser()
+    config.read(configDir)
+
+    if not config.has_section("CODE"):
+        config.add_section("CODE")
+        config.set("CODE","code", code)
+
+    else:
+        print("标题已存在")
+
+    with open(configDir, "w") as configFile:
+        config.write(configFile)
+
+    configFile.close()

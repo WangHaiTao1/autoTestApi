@@ -20,3 +20,8 @@ class ReadConfig:
 
         value = self.cf.get("MYSQL",name)
         return value
+
+    def get_code(self,name):
+
+        value = self.cf.get("CODE",name)
+        return value
