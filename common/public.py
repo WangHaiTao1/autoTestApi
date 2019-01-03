@@ -56,7 +56,6 @@ def get_reportPath():
     reportPath = os.path.join(rePath, "report.html")
 
     return reportPath
-from common import configHTTP
 def write_code(code):
 
     configDir = os.path.join(proDir , "config.ini")
